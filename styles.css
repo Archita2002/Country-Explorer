@@ -1,0 +1,244 @@
+/* Reset and body styling */
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+    background: linear-gradient(to right, rgb(126, 180, 252), rgb(235, 232, 233));
+    height: 100vh; /* Set to viewport height */
+    overflow: hidden; /* Prevent page from scrolling */
+}
+
+/* Header styling */
+header {
+    width: 100%;
+    color: rgb(11, 9, 9);
+    text-align: center;
+    padding: 20px;
+    flex-shrink: 0; /* Prevent header from shrinking */
+}
+
+header h1 {
+    color: #0b0808;
+    font-size: 3em;
+    font-family: "Allura", cursive;
+    font-weight: 800;
+    font-size: 36px;
+}
+
+/* Search bar styling */
+#search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    width: 100%;
+}
+
+#search {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #f4e9e9;
+    border-radius: 7px;
+    margin-right: 5px;
+    font-size: 1em;
+}
+
+#search-button {
+    padding: 10px 15px;
+    font-size: 1em;
+    color: rgb(73, 71, 71);
+    background-color: #ffffff;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#search-button:hover {
+    background-color: #f1f3f5;
+}
+
+/* Search suggestions */
+.suggestions {
+    position: relative;
+    background: #fff;
+    width: 80%;
+    max-height: 150px;
+    overflow-y: auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.suggestions div {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.suggestions div:hover {
+    background-color: #f0f0f0;
+}
+
+/* Country list styling */
+main {
+    flex-grow: 1; /* Allow main content to grow */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    overflow-y: auto;
+}
+
+#country-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 50%;
+    padding: 20px;
+}
+
+.country-card {
+background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s;
+    cursor: pointer;
+    color: #070707;
+    font-family: "Allura", cursive;
+    font-weight: 400;
+}
+
+.country-card:hover {
+    transform: scale(1.05);
+} 
+
+.country-card img {
+    width: 100px;       
+    height: 100px;      
+     object-fit: cover; 
+    border-radius: 5px; 
+}
+
+
+
+.country-card h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+   
+}
+
+/* Favorite button styling */
+.favorite-btn {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: gray;
+    transition: color 0.3s;
+}
+
+.favorite-btn.favorited {
+    color: rgb(242, 247, 0);
+}
+
+/* Show more button */
+.show-more {
+    padding: 10px 20px;
+    background-color: #dbe2e7;
+    color: #131111;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+/* .show-more:hover {
+    background-color: #005f99;
+} */
+
+/* Footer styling */
+/* footer {
+    width: 100%;
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    flex-shrink: 0; /* Prevent footer from shrinking */
+    /* margin-top: 10px;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 0.9em;
+} */ 
+/* Existing code remains the same */
+
+@media (max-width: 1024px) {
+    /* Adjustments for laptop screens */
+    #search {
+        width: 60%;
+        font-size: 1em;
+        padding: 8px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    #country-list {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    /* Adjustments for tablets */
+    #search {
+        width: 70%;
+    }
+
+    .country-card h3 {
+        font-size: 1.1em;
+    }
+
+    .country-card img {
+        width: 70%;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Adjustments for mobile phones */
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    #search {
+        width: 90%;
+        font-size: 0.9em;
+        padding: 8px;
+    }
+
+    #country-list {
+        grid-template-columns: 1fr;
+    }
+
+    .country-card img {
+        width: 80%;
+        height: 15vh;
+    }
+
+    .country-card h3 {
+        font-size: 1em;
+    }
+}
